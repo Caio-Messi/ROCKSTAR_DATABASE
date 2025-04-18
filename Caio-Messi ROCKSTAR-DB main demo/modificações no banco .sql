@@ -14,8 +14,6 @@ PLATAFORMA_ID INT,
 FOREIGN KEY (PLATAFORMA_ID) REFERENCES PLATAFORMAS (ID_PLATAFORMA)
 );
 
-/*DROP TABLE JOGOS;*/
-
 INSERT INTO JOGOS (NOME_JOGO, DATA_LANCAMENTO, PREÇO_BASE, GENERO) VALUES 
 ('Grand Theft Auto V', '2013-09-17', 59.99, 'Ação e Aventura'),
 ('Red Dead Redemption 2', '2018-10-26', 69.99, 'Ação e Aventura'),
@@ -42,7 +40,9 @@ INSERT INTO JOGOS (NOME_JOGO, DATA_LANCAMENTO, PREÇO_BASE, GENERO) VALUES
 ('Grand Theft Auto: The Lost and Damned', '2009-02-17', 19.99, 'Ação e Aventura'),
 ('Max Payne', '2001-07-23', 29.99, 'Ação');
 
-/*select * from jogos;*/
+delete from jogos where id_jogo = 10;
+delete from jogos where id_jogo = 22;
+delete from jogos where id_jogo = 23;
 
 create table plataformas(
 id_plataforma int not null primary key unique auto_increment,
@@ -85,7 +85,7 @@ VALUES
 ('Corrida Infinita', 'Expansão com novos modos de corrida e circuitos em GTA V.', '2025-02-22', 1),
 ('A Era do Ouro', 'Expansão que traz a corrida pelo ouro para Red Dead Redemption 2.', '2025-03-05', 2);
 
-/* Area financeira*/
+delete from expansoes where id_expansoes = 9;
 
 CREATE TABLE contas (
     id_conta INT PRIMARY KEY AUTO_INCREMENT,
@@ -381,6 +381,8 @@ VALUES
 ('Rockstar Movie Night', 'Exibição de filmes relacionados aos jogos da Rockstar, com prêmios no final.', '2025-06-15', '2025-06-20', 20000.00, 90.0, NULL),
 ('Rockstar Social Media Challenge', 'Desafio nas redes sociais com prêmios para quem criar o melhor conteúdo sobre os jogos da Rockstar.', '2025-02-01', '2025-02-28', 25000.00, 75.0, NULL);
 
+delete from Campanhas where id_campanha = 15;
+
 INSERT INTO Localizacao (cidade, pais) VALUES
 ('Nova York', 'EUA'),
 ('Londres', 'UK'),
@@ -626,6 +628,11 @@ VALUES
 ('Pacote de skins', 90.00, 'RDR COINS', 'CANCELADA'),
 ('Acessórios exclusivos', 15.00, 'GTA COINS', 'PAGA'),
 ('Upgrade de arma', 60.00, 'GTAV COINS', 'PENDENTE');
+
+delete from historico_microtransacoes where id_historico = 7;
+delete from historico_microtransacoes where id_historico = 12;
+delete from historico_microtransacoes where id_historico = 19;
+
 
 SELECT * FROM HISTORICO_MICROTRANSACOES;
 
